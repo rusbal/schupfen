@@ -13,8 +13,6 @@
 // require jquery
 // require camaleon_cms/bootstrap.min.js
 //
-//= require ./vendor/modernizr/modernizr.min.js
-//
 // -------- Vendor
 //= require ./vendor/jquery/jquery.min.js
 //= require ./vendor/jquery.appear/jquery.appear.min.js
