@@ -1,0 +1,14 @@
+{
+  "name" : "Porto",
+  "description" : "",
+  "thumb" : "images/image.png",
+  "helpers": [
+    "Themes::Porto::MainHelper"
+  ],
+  "hooks": {
+    "on_active": ["porto_on_install_theme"],
+    "on_inactive": ["porto_on_uninstall_theme"],
+    "on_theme_settings": ["porto_settings"]
+    //here all your hooks
+  }
+}

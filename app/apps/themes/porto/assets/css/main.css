@@ -1,0 +1,42 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require camaleon_cms/bootstrap.min.css
+ *= require font-awesome
+ *
+ *   <!-- Vendor CSS -->
+ * require ./vendor/bootstrap/css/bootstrap.min.css
+ * require ./vendor/font-awesome/css/font-awesome.min.css
+ *= require ./vendor/simple-line-icons/css/simple-line-icons.min.css
+ *= require ./vendor/owl.carousel/assets/owl.carousel.min.css
+ *= require ./vendor/owl.carousel/assets/owl.theme.default.min.css
+ *= require ./vendor/magnific-popup/magnific-popup.min.css
+ *
+ *   <!-- Theme CSS -->
+ *= require ./theme.css
+ *= require ./theme-elements.css
+ *= require ./theme-blog.css
+ *= require ./theme-shop.css
+ *= require ./theme-animate.css
+ *
+ *   <!-- Current Page CSS -->
+ *= require ./vendor/rs-plugin/css/settings.css
+ *= require ./vendor/rs-plugin/css/layers.css
+ *= require ./vendor/rs-plugin/css/navigation.css
+ *
+ *   <!-- Skin CSS -->
+ *= require ./skins/skin-restaurant.css
+ *
+ *   <!-- Demo CSS -->
+ *= require ./demos/demo-restaurant.css
+ *
+ *   <!-- Theme Custom CSS -->
+ *= require ./custom.css
+ */
