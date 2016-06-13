@@ -8,5 +8,8 @@ module PortoHelper
    end
   end
 
+  def swf_tag(file)
+    "<embed width='936' height='585' src='#{asset_path('ps.swf')}'>".html_safe
+  end
 end
 
