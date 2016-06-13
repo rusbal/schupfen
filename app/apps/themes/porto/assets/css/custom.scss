@@ -1,0 +1,21 @@
+/* Add here all your CSS customizations */
+
+div.main {
+  margin-bottom:25px
+}
+
+div.header-logo {
+  a {
+    div.text {
+      font-size: 2em; 
+      background: maroon; 
+      padding: 13px;
+      opacity: 0.75;
+
+      span.text-1 {
+        color: #ddd;
+        font-weight: lighter;
+      }
+    }
+  }
+}
