@@ -18,3 +18,4 @@
 
 /camaleon_cms-2.1.2.0
 HOME
+config/secrets.yml
