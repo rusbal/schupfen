@@ -1,0 +1,20 @@
+<div role="main" class="main">
+  <section class="parallax section section-text-light section-parallax section-center mt-none mb-xl" style="background-image: url('<%= banner_image %>');" data-stellar-background-ratio="0.5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 center">
+        <h1 class="mt-xlg pb-md pt-md font-color-light">
+          <%= raw @post.the_title.upcase %>
+        </h1>
+      </div>
+    </div>
+  </div>
+  </section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 pt-xlg">
+        <%= raw @post.the_content %>
+      </div>
+    </div>
+  </div>
+</div>
