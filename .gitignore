@@ -20,3 +20,4 @@
 HOME
 config/secrets.yml
 config/database.yml
+shared
