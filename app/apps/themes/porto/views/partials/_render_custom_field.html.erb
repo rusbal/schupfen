@@ -1,0 +1,30 @@
+<% 
+
+# Called from:
+#
+#   themes/porto/views/template_home.html.erb
+#     @post.render_fields
+#
+#     camaleon_cms/app/decorators/camaleon_cms/custom_fields_concern.rb
+#       CamaleonCms::CustomFieldsConcern#render_fields
+
+
+# Partials in rendering order
+partials    = [
+  { key: :"slider-images", file: 'partials/home/slider' } #1
+]
+
+will_render = {}
+will_render[:'slider-images'] = fields[:'slider-images'].present?
+
+%>
+
+<% partials.each do |partial| %>
+  <% if will_render[partial[:key]] %>
+
+    <%= render partial[:file], images:    fields[:"slider-images"][:values], 
+                               pre_title: fields[:"slider-pre-title"][:values], 
+                               title:     fields[:"slider-title"][:values], 
+                               subtitle:  fields[:"slider-subtitle"][:values] %>
+  <% end %>
+<% end %>
