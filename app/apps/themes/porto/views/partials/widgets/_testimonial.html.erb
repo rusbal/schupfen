@@ -1,0 +1,32 @@
+<section class="section section-background section-center" style="background-image: url(<%= page.the_thumb_url %>); background-position: 50% 100%; min-height: 615px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <hr class="custom-divider">
+        <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options='{"items": 1, "loop": false}'>
+
+        <% fields.each do |field| %>
+          <div>
+            <div class="col-md-12">
+              <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
+                <blockquote>
+                  <p><%= field[:text] %></p>
+                </blockquote>
+                <div class="testimonial-author">
+                  <p><strong><%= field[:name] %></strong><span><%= field[:position] %></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+
+      </div>
+    </div>
+  </div>
+</section>

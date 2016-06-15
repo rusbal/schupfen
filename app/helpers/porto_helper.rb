@@ -25,5 +25,20 @@ module PortoHelper
       text_logo
     end
   end
+
+  # Called at porto/views/template_home.html.erb
+  
+  def post_widget(type)
+    klass  = CamaleonCms::PostWidgets.new(type: type, post: @post, current_site: current_site)
+    widget = klass.get_widget
+
+    return unless widget
+
+    locals = { page: widget.decorate, 
+               fields: klass.collect_custom_fields(widget) }
+
+    render :partial => "partials/widgets/#{type.to_s.underscore}",
+           :locals  => locals
+  end
 end
 

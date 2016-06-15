@@ -2,10 +2,10 @@
   <div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options='{"delay": 9000, "gridwidth": 1170, "gridheight": 650, "disableProgressBar": "on"}'>
     <ul>
 
-    <% images.each_with_index do |value, idx| %>
+    <% fields.each do |field| %>
 
       <li data-transition="fade">
-        <%= image_tag value, 
+        <%= image_tag field[:image], 
           :"alt"             => "",
           :"data-bgposition" => "center center",
           :"data-bgfit"      => "cover",
@@ -17,7 +17,7 @@
           data-y="center" data-voffset="-55"
           data-start="500"
           style="z-index: 5"
-          data-transform_in="y:[-300%];opacity:0;s:500;"><%= pre_title[idx] %></div>
+          data-transform_in="y:[-300%];opacity:0;s:500;"><%= field[:pre_title] %></div>
 
         <!--
         <div class="tp-caption"
@@ -36,14 +36,14 @@
           data-transform_in="y:[100%];s:500;"
           data-transform_out="opacity:0;s:500;"
           style="z-index: 5"
-          data-mask_in="x:0px;y:0px;"><%= title[idx] %></div>
+          data-mask_in="x:0px;y:0px;"><%= field[:title] %></div>
 
         <div class="tp-caption bottom-label"
           data-x="left" data-hoffset="25"
           data-y="center" data-voffset="40"
           data-start="2000"
           style="z-index: 5"
-          data-transform_in="y:[100%];opacity:0;s:500;" style="font-size: 1.2em;"><%= subtitle[idx] %></div>
+          data-transform_in="y:[100%];opacity:0;s:500;" style="font-size: 1.2em;"><%= field[:subtitle] %></div>
 
         <a class="tp-caption btn btn-md btn-primary"
           data-hash

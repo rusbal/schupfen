@@ -1,9 +1,7 @@
-<% if @post.render_fields.present? %>
-    <%= raw @post.render_fields %>
-<% end %>
 
+<%= post_widget(:slider) %>
 <%= render 'partials/home/enjoy_your_meal' %>
-<%= render 'partials/home/testimonial' %>
+<%= post_widget(:testimonial) %>
 <%= render 'partials/home/gallery' %>
 
 
