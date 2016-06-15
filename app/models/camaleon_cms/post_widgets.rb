@@ -1,3 +1,5 @@
+# Called by PortoHelper#post_widget
+#
 class CamaleonCms::PostWidgets
 
   def initialize(args)
@@ -8,26 +10,27 @@ class CamaleonCms::PostWidgets
 
   def get_widget
     fields = @post.get_fields_object(true)
+
     return unless fields[type]
     id     = fields[type][:values] || fields[type][:value]
-    current_site.the_posts.where(id: id).first
+
+    if id.is_a? Array
+      current_site.the_posts.where(id: id).to_a
+    else
+      current_site.the_posts.where(id: id).first
+    end
   end
 
   def collect_custom_fields(widget)
-    if type == :testimonial
-      collect_custom_testimonial_fields(widget)
-    elsif type == :slider
-      collect_custom_slider_fields(widget)
-    elsif type == :gallery
-      collect_custom_gallery_fields(widget)
-    end
+    collect_method = "collect_#{type.to_s}_fields"
+    self.send(collect_method, widget)
   end
 
   private
 
   attr_reader :current_site, :type
 
-  def collect_custom_testimonial_fields(widget)
+  def collect_testimonial_fields(widget)
     data = []
 
     texts     = widget.get_field_values(:'testimonial-text')
@@ -43,7 +46,7 @@ class CamaleonCms::PostWidgets
     data
   end
 
-  def collect_custom_slider_fields(widget)
+  def collect_slider_fields(widget)
     data = []
 
     images     = widget.get_field_values(:'slider-images')
@@ -61,7 +64,22 @@ class CamaleonCms::PostWidgets
     data
   end
 
-  def collect_custom_gallery_fields(widget)
+  def collect_gallery_fields(widget)
     widget.get_field_values_hash[:gallery]
   end
+
+  def collect_team_fields(widgets)
+    data = []
+
+    widgets.each do |widget|
+      wd = widget.decorate
+
+      data << { :name    => wd.the_title,
+                :about   => wd.the_excerpt,
+                :picture => wd.get_field(:'team-member-picture') }
+    end
+
+    data
+  end
+
 end

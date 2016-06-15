@@ -38,7 +38,7 @@ module PortoHelper
     return unless fields
 
     render :partial => "partials/widgets/#{type.to_s.underscore}",
-           :locals  => { page: widget.decorate, fields: fields }
+           :locals  => { page: (widget.decorate rescue nil), fields: fields }
   end
 end
 
