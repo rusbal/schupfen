@@ -18,6 +18,8 @@ class CamaleonCms::PostWidgets
       collect_custom_testimonial_fields(widget)
     elsif type == :slider
       collect_custom_slider_fields(widget)
+    elsif type == :gallery
+      collect_custom_gallery_fields(widget)
     end
   end
 
@@ -57,5 +59,9 @@ class CamaleonCms::PostWidgets
     end
 
     data
+  end
+
+  def collect_custom_gallery_fields(widget)
+    widget.get_field_values_hash[:gallery]
   end
 end
