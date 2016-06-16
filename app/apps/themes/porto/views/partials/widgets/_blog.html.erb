@@ -1,0 +1,43 @@
+              <section class="section section-quaternary section-no-border match-height mt-none">
+                <div class="row">
+                  <div class="col-half-section col-half-section-right">
+                    <div class="center">
+                      <h4 class="mt-none mb-none heading-dark">Our <strong>Blog</strong></h4>
+                      <p class="mb-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+                      <hr class="custom-divider m-none">
+                    </div>
+                    
+                    <div class="owl-carousel owl-theme show-nav-title mt-xlg mb-none" data-plugin-options='{"items": 1, "margin": 10, "loop": true, "nav": true, "dots": false, "autoplay": true, "autoplayTimeout": 4000}'>
+
+                    <% fields.in_groups_of(2, false) do |row_fields| %>
+
+                      <div>
+
+                      <% row_fields.each do |field| %>
+
+                        <span class="thumb-info thumb-info-side-image thumb-info-no-zoom thumb-info-no-borders thumb-info-blog-custom mb-xl">
+                          <span class="thumb-info-side-image-wrapper p-none">
+                            <img src="<%= field[:picture] %>" class="img-responsive" alt="" style="width: 165px;">
+                          </span>
+                          <span class="thumb-info-caption">
+                            <span class="thumb-info-caption-text">
+                              <h4 class="text-semibold mb-none mt-xs heading-dark"><%= field[:title] %></h4>
+                              <p class="font-size-md"><%= field[:excerpt] %></p>
+                              <a class="mt-md" href="<%= field[:url] %>">Read More <i class="fa fa-long-arrow-right"></i></a>
+                            </span>
+                          </span>
+                        </span>
+
+                      <% end %>
+
+                      </div>
+
+                    <% end %>
+
+                    </div>
+
+                  </div>
+                </div>
+              </section>
+

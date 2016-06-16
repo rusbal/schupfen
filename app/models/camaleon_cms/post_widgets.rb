@@ -82,4 +82,17 @@ class CamaleonCms::PostWidgets
     data
   end
 
+  def collect_blog_fields(widgets)
+    data = []
+
+    widgets.each do |widget|
+      data << { :title   => widget.title,
+                :excerpt => ActionView::Base.full_sanitizer.sanitize(widget.content).strip.truncate_words(13),
+                :picture => widget.decorate.get_field(:"blog-picture"),
+                :url     => widget.decorate.the_url }
+    end
+
+    data
+  end
+
 end
